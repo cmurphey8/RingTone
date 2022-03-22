@@ -32,7 +32,7 @@ public class RingTone {
     // YOU DO: play this RingTone for the specified duration
     public void playTone(double duration) {
 
-        // YOU DO: total number of samples to play over the specified duration
+        // YOU DO: calculate total number of samples to play over the specified duration
 	    int N;
 
 	    for (int i = 1; i <= N; i++) {
