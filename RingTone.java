@@ -28,27 +28,27 @@ public class RingTone {
             double s = i * numSamples/bufferSize;
             // the SINE WAVE made by the input frequency
             this.enqueue(Math.sin(2 * Math.PI * s * hz / StdAudio.SAMPLE_RATE));
-		}
+	}
     }
 
     // WE DO: play this RingTone for the specified duration
     public void playTone(double duration) {
 
         // WE DO: total number of samples to play in the specified duration
-		int N = (int) (StdAudio.SAMPLE_RATE * duration);
+	int N = (int) (StdAudio.SAMPLE_RATE * duration);
 
-		for (int i = 1; i <= N; i++) {
+	for (int i = 1; i <= N; i++) {
 
             // WE DO: dequeue a sample from this RingTone
-			double quanta = this.dequeue();
+            double quanta = this.dequeue();
 
             // WE DO: enqueue the sample back into the buffer @ .98 amplitude
             this.enqueue(quanta * .98);
 
             // WE DO: play the sample
-			StdAudio.play(quanta);
-		}
+	    StdAudio.play(quanta);
 	}
+    }   
 
     // YOU DO: add item x to index <last> and update index
     private void enqueue(double x) {
